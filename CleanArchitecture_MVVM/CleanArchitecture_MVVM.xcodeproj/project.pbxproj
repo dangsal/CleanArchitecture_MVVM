@@ -99,13 +99,13 @@
 		D781F2DB2AC055B50031366E /* CleanArchitecture_MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				D781F2DC2AC055B50031366E /* AppDelegate.swift */,
-				D781F2DE2AC055B50031366E /* SceneDelegate.swift */,
-				D781F2E02AC055B50031366E /* ViewController.swift */,
-				D781F2E22AC055B50031366E /* Main.storyboard */,
-				D781F2E52AC055B60031366E /* Assets.xcassets */,
-				D781F2E72AC055B60031366E /* LaunchScreen.storyboard */,
-				D781F2EA2AC055B60031366E /* Info.plist */,
+				D781F3142AC062D20031366E /* Application */,
+				D781F3132AC062CD0031366E /* Presentation */,
+				D781F3122AC062C70031366E /* Domain */,
+				D781F3112AC062C40031366E /* Data */,
+				D781F3102AC062BF0031366E /* Util */,
+				D781F30F2AC062BA0031366E /* Service */,
+				D781F30E2AC062B20031366E /* Resource */,
 			);
 			path = CleanArchitecture_MVVM;
 			sourceTree = "<group>";
@@ -125,6 +125,70 @@
 				D781F2FF2AC055B60031366E /* CleanArchitecture_MVVMUITestsLaunchTests.swift */,
 			);
 			path = CleanArchitecture_MVVMUITests;
+			sourceTree = "<group>";
+		};
+		D781F30E2AC062B20031366E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D781F2E52AC055B60031366E /* Assets.xcassets */,
+				D781F2E72AC055B60031366E /* LaunchScreen.storyboard */,
+				D781F2E22AC055B50031366E /* Main.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D781F30F2AC062BA0031366E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D781F3102AC062BF0031366E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D781F3112AC062C40031366E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D781F3122AC062C70031366E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D781F3132AC062CD0031366E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D781F3152AC062F60031366E /* Scene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D781F3142AC062D20031366E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D781F2EA2AC055B60031366E /* Info.plist */,
+				D781F2DC2AC055B50031366E /* AppDelegate.swift */,
+				D781F2DE2AC055B50031366E /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D781F3152AC062F60031366E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D781F2E02AC055B50031366E /* ViewController.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
