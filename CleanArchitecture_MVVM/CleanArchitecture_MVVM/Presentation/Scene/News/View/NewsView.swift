@@ -75,7 +75,7 @@ extension NewsView: UITableViewDelegate { }
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-struct CellPreview: PreviewProvider{
+struct Preview: PreviewProvider{
     static var previews: some View {
         UIViewPreview {
             let view = NewsView()

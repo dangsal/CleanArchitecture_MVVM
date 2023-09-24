@@ -29,4 +29,3 @@ class NewsViewController: UIViewController {
     
     // MARK: - func
 }
-
