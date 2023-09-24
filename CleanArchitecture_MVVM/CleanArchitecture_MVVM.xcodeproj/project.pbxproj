@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71A5EDB2AC0705A00D909E9 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71A5EDA2AC0705A00D909E9 /* Key.plist */; };
+		D71A5EDD2AC070A300D909E9 /* Key+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EDC2AC070A300D909E9 /* Key+Extension.swift */; };
+		D71A5EDF2AC0713D00D909E9 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EDE2AC0713D00D909E9 /* APIEnvironment.swift */; };
+		D71A5EE22AC071D000D909E9 /* NewsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EE12AC071D000D909E9 /* NewsEndPoint.swift */; };
+		D71A5EE52AC0752800D909E9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D71A5EE42AC0752800D909E9 /* Moya */; };
 		D781F2DD2AC055B50031366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DC2AC055B50031366E /* AppDelegate.swift */; };
 		D781F2DF2AC055B50031366E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DE2AC055B50031366E /* SceneDelegate.swift */; };
 		D781F2E12AC055B50031366E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2E02AC055B50031366E /* ViewController.swift */; };
@@ -35,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71A5EDA2AC0705A00D909E9 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
+		D71A5EDC2AC070A300D909E9 /* Key+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key+Extension.swift"; sourceTree = "<group>"; };
+		D71A5EDE2AC0713D00D909E9 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		D71A5EE12AC071D000D909E9 /* NewsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoint.swift; sourceTree = "<group>"; };
 		D781F2D92AC055B50031366E /* CleanArchitecture_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D781F2DC2AC055B50031366E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D781F2DE2AC055B50031366E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71A5EE52AC0752800D909E9 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +84,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71A5ED82AC0702500D909E9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				D71A5EDA2AC0705A00D909E9 /* Key.plist */,
+				D71A5EDC2AC070A300D909E9 /* Key+Extension.swift */,
+				D71A5EDE2AC0713D00D909E9 /* APIEnvironment.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		D71A5ED92AC0702D00D909E9 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				D71A5EE12AC071D000D909E9 /* NewsEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		D71A5EE02AC0718D00D909E9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D71A5ED82AC0702500D909E9 /* Foundation */,
+				D71A5ED92AC0702D00D909E9 /* EndPoint */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D71A5EE32AC0752800D909E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D781F2D02AC055B50031366E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,7 @@
 				D781F2F22AC055B60031366E /* CleanArchitecture_MVVMTests */,
 				D781F2FC2AC055B60031366E /* CleanArchitecture_MVVMUITests */,
 				D781F2DA2AC055B50031366E /* Products */,
+				D71A5EE32AC0752800D909E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +196,7 @@
 		D781F3112AC062C40031366E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D71A5EE02AC0718D00D909E9 /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -204,6 +250,9 @@
 			dependencies = (
 			);
 			name = CleanArchitecture_MVVM;
+			packageProductDependencies = (
+				D71A5EE42AC0752800D909E9 /* Moya */,
+			);
 			productName = CleanArchitecture_MVVM;
 			productReference = D781F2D92AC055B50031366E /* CleanArchitecture_MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +346,7 @@
 			files = (
 				D781F2E92AC055B60031366E /* LaunchScreen.storyboard in Resources */,
 				D781F2E62AC055B60031366E /* Assets.xcassets in Resources */,
+				D71A5EDB2AC0705A00D909E9 /* Key.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +374,9 @@
 				D781F2E12AC055B50031366E /* ViewController.swift in Sources */,
 				D781F2DD2AC055B50031366E /* AppDelegate.swift in Sources */,
 				D781F2DF2AC055B50031366E /* SceneDelegate.swift in Sources */,
+				D71A5EE22AC071D000D909E9 /* NewsEndPoint.swift in Sources */,
+				D71A5EDF2AC0713D00D909E9 /* APIEnvironment.swift in Sources */,
+				D71A5EDD2AC070A300D909E9 /* Key+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +726,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D71A5EE42AC0752800D909E9 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D71A5ED52AC06E1700D909E9 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D781F2D12AC055B50031366E /* Project object */;
 }
