@@ -12,6 +12,7 @@
 		D71A5EDF2AC0713D00D909E9 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EDE2AC0713D00D909E9 /* APIEnvironment.swift */; };
 		D71A5EE22AC071D000D909E9 /* NewsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EE12AC071D000D909E9 /* NewsEndPoint.swift */; };
 		D71A5EE52AC0752800D909E9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D71A5EE42AC0752800D909E9 /* Moya */; };
+		D71A5EE92AC075DF00D909E9 /* BaseViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5EE82AC075DF00D909E9 /* BaseViewType.swift */; };
 		D781F2DD2AC055B50031366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DC2AC055B50031366E /* AppDelegate.swift */; };
 		D781F2DF2AC055B50031366E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DE2AC055B50031366E /* SceneDelegate.swift */; };
 		D781F2E12AC055B50031366E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2E02AC055B50031366E /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		D71A5EDC2AC070A300D909E9 /* Key+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key+Extension.swift"; sourceTree = "<group>"; };
 		D71A5EDE2AC0713D00D909E9 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		D71A5EE12AC071D000D909E9 /* NewsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoint.swift; sourceTree = "<group>"; };
+		D71A5EE82AC075DF00D909E9 /* BaseViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewType.swift; sourceTree = "<group>"; };
 		D781F2D92AC055B50031366E /* CleanArchitecture_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D781F2DC2AC055B50031366E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D781F2DE2AC055B50031366E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D71A5EE62AC075CF00D909E9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D71A5EE72AC075D700D909E9 /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D71A5EE72AC075D700D909E9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D71A5EE82AC075DF00D909E9 /* BaseViewType.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		D781F2D02AC055B50031366E = {
@@ -211,6 +229,7 @@
 		D781F3132AC062CD0031366E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D71A5EE62AC075CF00D909E9 /* Common */,
 				D781F3152AC062F60031366E /* Scene */,
 			);
 			path = Presentation;
@@ -377,6 +396,7 @@
 				D71A5EE22AC071D000D909E9 /* NewsEndPoint.swift in Sources */,
 				D71A5EDF2AC0713D00D909E9 /* APIEnvironment.swift in Sources */,
 				D71A5EDD2AC070A300D909E9 /* Key+Extension.swift in Sources */,
+				D71A5EE92AC075DF00D909E9 /* BaseViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
