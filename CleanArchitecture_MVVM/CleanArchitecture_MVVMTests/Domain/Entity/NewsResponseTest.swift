@@ -1,15 +1,15 @@
 //
-//  CleanArchitecture_MVVMTests.swift
+//  NewsResponseTest.swift
 //  CleanArchitecture_MVVMTests
 //
-//  Created by 이성호 on 2023/09/24.
+//  Created by 이성호 on 2023/09/25.
 //
 
+import Foundation
 import XCTest
 @testable import CleanArchitecture_MVVM
 
-final class CleanArchitecture_MVVMTests: XCTestCase {
-    
+final class NewsResponseTest: XCTestCase {
     func test_article_변수가_있는가() {
         //given
         let sut = Article.testArticle
