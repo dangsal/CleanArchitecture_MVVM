@@ -62,8 +62,8 @@ class NewsViewController: UIViewController {
                 switch result {
                 case .finished:
                     return
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    self?.makeAlert(title: "네트워크 오류")
                 }
             } receiveValue: { [weak self] articles in
                 self?.newsView.updateArticles(articles: articles)
