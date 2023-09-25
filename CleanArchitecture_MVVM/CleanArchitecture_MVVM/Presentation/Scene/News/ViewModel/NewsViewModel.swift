@@ -23,13 +23,13 @@ final class NewsViewModel {
     
     private let articlePublisher = PassthroughSubject<[Article], NetworkError>()
     
-    private let newsService: NewsService
+    private let usecase: NewsUsecase
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: - init
     
-    init(newsService: NewsService) {
-        self.newsService = newsService
+    init(usecase: NewsUsecase) {
+        self.usecase = usecase
     }
     
     // MARK: - func
@@ -49,7 +49,7 @@ final class NewsViewModel {
     private func requestArticle(country: String = "us") {
         Task {
             do {
-                let articles = try await self.newsService.fetchNewsArticle(country: country)
+                let articles = try await self.usecase.fetchNewsArticle(country: country)
                 self.articlePublisher.send(articles.toNewsResponse().articles)
             } catch {
                 self.articlePublisher.send(completion: .failure(.failedFetchArticles))

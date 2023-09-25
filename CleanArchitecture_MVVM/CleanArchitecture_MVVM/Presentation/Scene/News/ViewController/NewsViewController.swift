@@ -86,8 +86,8 @@ import SwiftUI
 struct PreView: PreviewProvider {
     static var previews: some View {
         let repository = NewsRepositoryImpl()
-        let service = NewsService(repository: repository)
-        let viewModel = NewsViewModel(newsService: service)
+        let usecase = NewsUsecaseImpl(repository: repository)
+        let viewModel = NewsViewModel(usecase: usecase)
         let viewController = NewsViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.toPreview()
