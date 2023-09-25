@@ -15,7 +15,19 @@ class NewsViewController: UIViewController {
     
     // MARK: - property
     
+    private let viewModel: NewsViewModel
+    
     // MARK: - init
+    
+    init(viewModel: NewsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - life cycle
     
