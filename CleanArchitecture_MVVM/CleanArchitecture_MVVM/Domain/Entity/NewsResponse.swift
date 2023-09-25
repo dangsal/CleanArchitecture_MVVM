@@ -15,3 +15,8 @@ struct Article {
     let title: String
     let description: String
 }
+
+extension Article: Equatable {
+    static let testArticle = [Article(title: "테스트 타이틀",
+                                     description: "테스트 디스크립션")]
+}

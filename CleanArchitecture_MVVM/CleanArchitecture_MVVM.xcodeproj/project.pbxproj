@@ -25,12 +25,12 @@
 		D71A5F0E2AC120D700D909E9 /* UIViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5F0D2AC120D700D909E9 /* UIViewController+Combine.swift */; };
 		D71A5F112AC146F200D909E9 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5F102AC146F200D909E9 /* UIViewController+Preview.swift */; };
 		D71A5F142AC14BFD00D909E9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A5F132AC14BFD00D909E9 /* UIViewController+Alert.swift */; };
+		D71A5F1A2AC15DC300D909E9 /* CleanArchitecture_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2F32AC055B60031366E /* CleanArchitecture_MVVMTests.swift */; };
 		D781F2DD2AC055B50031366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DC2AC055B50031366E /* AppDelegate.swift */; };
 		D781F2DF2AC055B50031366E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2DE2AC055B50031366E /* SceneDelegate.swift */; };
 		D781F2E12AC055B50031366E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2E02AC055B50031366E /* NewsViewController.swift */; };
 		D781F2E62AC055B60031366E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D781F2E52AC055B60031366E /* Assets.xcassets */; };
 		D781F2E92AC055B60031366E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D781F2E72AC055B60031366E /* LaunchScreen.storyboard */; };
-		D781F2F42AC055B60031366E /* CleanArchitecture_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2F32AC055B60031366E /* CleanArchitecture_MVVMTests.swift */; };
 		D781F2FE2AC055B60031366E /* CleanArchitecture_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2FD2AC055B60031366E /* CleanArchitecture_MVVMUITests.swift */; };
 		D781F3002AC055B60031366E /* CleanArchitecture_MVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D781F2FF2AC055B60031366E /* CleanArchitecture_MVVMUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -572,7 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D781F2F42AC055B60031366E /* CleanArchitecture_MVVMTests.swift in Sources */,
+				D71A5F1A2AC15DC300D909E9 /* CleanArchitecture_MVVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +835,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGZ8HP6A2J;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dangsal.CleanArchitecture-MVVMUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -853,6 +854,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RGZ8HP6A2J;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dangsal.CleanArchitecture-MVVMUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
