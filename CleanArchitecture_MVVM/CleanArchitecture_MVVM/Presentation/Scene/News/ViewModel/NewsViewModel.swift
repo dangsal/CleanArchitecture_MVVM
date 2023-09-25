@@ -11,7 +11,17 @@ import Combine
 
 final class NewsViewModel {
     
+    struct Input {
+        let viewDidLoad: AnyPublisher<Void, Never>
+    }
+    
+    struct Output {
+        let articlePublisher: PassthroughSubject<[Article], NetworkError>
+    }
+    
     // MARK: - property
+    
+    private let articlePublisher = PassthroughSubject<[Article], NetworkError>()
     
     private let newsService: NewsService
     private var cancellable = Set<AnyCancellable>()
@@ -20,19 +30,29 @@ final class NewsViewModel {
     
     init(newsService: NewsService) {
         self.newsService = newsService
-        self.requestArticle(country: "us")
     }
     
     // MARK: - func
     
+    func transform(input: Input) -> Output {
+        input.viewDidLoad
+            .sink { [weak self] in
+                self?.requestArticle()
+            }
+            .store(in: &self.cancellable)
+        
+        return Output(articlePublisher: self.articlePublisher)
+    }
+    
     // MARK: - network
     
-    private func requestArticle(country: String) {
+    private func requestArticle(country: String = "us") {
         Task {
             do {
                 let articles = try await self.newsService.fetchNewsArticle(country: country)
-            } catch(let error) {
-                
+                self.articlePublisher.send(articles.toNewsResponse().articles)
+            } catch {
+                self.articlePublisher.send(completion: .failure(.failedFetchArticles))
             }
         }
     }

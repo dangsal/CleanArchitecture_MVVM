@@ -21,6 +21,8 @@ final class NewsView: UIView, BaseViewType {
     
     // MARK: - property
     
+    private var articles: [Article]?
+    
     // MARK: - init
     
     override init(frame: CGRect) {
@@ -54,15 +56,26 @@ final class NewsView: UIView, BaseViewType {
     func configureUI() {
         
     }
+    
+    func updateArticles(articles: [Article]) {
+        self.articles = articles
+    }
+    
+    func reloadTableView() {
+        self.tableView.reloadData()
+    }
 }
 
 extension NewsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let articles = self.articles else { return 0 }
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ArticleCell else { return UITableViewCell() }
+        guard let articles = self.articles else { return UITableViewCell() }
+        cell.updateCell(title: articles[indexPath.row].title, description: articles[indexPath.row].description)
         return cell
     }
 }

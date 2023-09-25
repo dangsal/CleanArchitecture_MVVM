@@ -5,6 +5,7 @@
 //  Created by 이성호 on 2023/09/24.
 //
 
+import Combine
 import UIKit
 
 class NewsViewController: UIViewController {
@@ -16,6 +17,7 @@ class NewsViewController: UIViewController {
     // MARK: - property
     
     private let viewModel: NewsViewModel
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: - init
     
@@ -37,7 +39,51 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bindToViewModel()
     }
     
     // MARK: - func
+    
+    private func bindToViewModel() {
+        let output = self.transformedOutput()
+        self.bindOutputToViewModel(output)
+        
+    }
+    
+    private func transformedOutput() -> NewsViewModel.Output {
+        let input = NewsViewModel.Input(viewDidLoad: self.viewDidLoadPublisher)
+        return self.viewModel.transform(input: input)
+    }
+    
+    private func bindOutputToViewModel(_ output: NewsViewModel.Output) {
+        output.articlePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                switch result {
+                case .finished:
+                    return
+                case .failure(let error):
+                    print(error)
+                }
+            } receiveValue: { [weak self] articles in
+                self?.newsView.updateArticles(articles: articles)
+                self?.newsView.reloadTableView()
+            }
+            .store(in: &self.cancellable)
+
+    }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct PreView: PreviewProvider {
+    static var previews: some View {
+        let repository = NewsRepositoryImpl()
+        let service = NewsService(repository: repository)
+        let viewModel = NewsViewModel(newsService: service)
+        let viewController = NewsViewController(viewModel: viewModel)
+        viewController.toPreview()
+    }
+}
+#endif

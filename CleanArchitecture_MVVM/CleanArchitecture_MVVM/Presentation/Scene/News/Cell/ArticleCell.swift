@@ -63,4 +63,9 @@ final class ArticleCell: UITableViewCell {
     private func configureUI() {
         
     }
+    
+    func updateCell(title: String, description: String) {
+        self.titleLabel.text = title
+        self.descriptionLabel.text = title
+    }
 }
