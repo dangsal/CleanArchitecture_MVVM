@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-class NewsViewController: UIViewController {
+final class NewsViewController: UIViewController {
     
     // MARK: - ui component
     
