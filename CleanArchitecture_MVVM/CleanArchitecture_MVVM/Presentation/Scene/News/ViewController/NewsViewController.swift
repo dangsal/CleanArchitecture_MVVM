@@ -39,10 +39,16 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar()
         self.bindToViewModel()
     }
     
     // MARK: - func
+    
+    private func setupNavigationBar() {
+        self.navigationItem.title = "News"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     private func bindToViewModel() {
         let output = self.transformedOutput()
@@ -83,7 +89,8 @@ struct PreView: PreviewProvider {
         let service = NewsService(repository: repository)
         let viewModel = NewsViewModel(newsService: service)
         let viewController = NewsViewController(viewModel: viewModel)
-        viewController.toPreview()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.toPreview()
     }
 }
 #endif
